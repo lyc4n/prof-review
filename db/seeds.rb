@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+FactoryBot.create(:user)
+professors = Professor.create([{first_name: 'Pepito', last_name: 'Manoloto'},
+                                first_name: 'Huseng', last_name: 'Sisiw'])
+
+
+codes  = %w{Math Biology Psychology Phys Arts English Filipino NSTP CET}
+levels = %w{111 112 113 221 222}
+
+codes.each do |code|
+  levels.each do |level|
+    Subject.create({code: "#{code} #{level}"})
+  end
+end
+
+puts 'Done seeding!'
