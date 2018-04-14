@@ -5,7 +5,7 @@ RSpec.feature 'Visiting root path', type: :feature do
   let!(:subjects){ [create(:subject, code: "MATH111"), create(:subject, code: "CS123")] }
 
   scenario 'Sees list of Subjects when user is logged in' do
-    login_as user
+    login_as user, scope: :user
     visit root_path
 
     expect(page).to have_text('Class List')

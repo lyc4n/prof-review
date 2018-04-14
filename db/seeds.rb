@@ -1,3 +1,4 @@
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 FactoryBot.create(:user)
 professors = Professor.create([{first_name: 'Pepito', last_name: 'Manoloto'},
                                 first_name: 'Huseng', last_name: 'Sisiw'])
