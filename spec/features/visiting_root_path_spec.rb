@@ -27,7 +27,6 @@ RSpec.feature 'Top page', type: :feature do
     @professors = create_list(:professor, 5)
     @professors.each_with_index do |prof, index|
       prof.subjects = subjects.sample(3)
-      prof.save
     end
   end
 

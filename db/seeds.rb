@@ -12,6 +12,13 @@ professors = FactoryBot.create_list(:professor, 25)
 
 ################
 # Subjects
-FactoryBot.create_list(:subject, 50)
+subjects = FactoryBot.create_list(:subject, 50)
+
+################
+# Connect professors and subjects
+professors.each do |prof|
+  random_subjects = subjects.sample(10)
+  prof.subjects = random_subjects
+end
 
 puts 'Done seeding!'
