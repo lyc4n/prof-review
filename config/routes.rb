@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root to: 'subjects#index'
+
+  resources :classes, controller: :subjects, as: :subjects, only: [] do
+    resources :professors, only: :index
+  end
 end

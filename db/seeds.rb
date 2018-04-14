@@ -1,16 +1,17 @@
+################
+# Admin user
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-FactoryBot.create(:user)
-professors = Professor.create([{first_name: 'Pepito', last_name: 'Manoloto'},
-                                first_name: 'Huseng', last_name: 'Sisiw'])
 
+################
+# Normal users
+users = FactoryBot.create_list(:user, 10)
 
-codes  = %w{Math Biology Psychology Phys Arts English Filipino NSTP CET}
-levels = %w{111 112 113 221 222}
+################
+# Professors
+professors = FactoryBot.create_list(:professor, 25)
 
-codes.each do |code|
-  levels.each do |level|
-    Subject.create({code: "#{code} #{level}"})
-  end
-end
+################
+# Subjects
+FactoryBot.create_list(:subject, 50)
 
 puts 'Done seeding!'

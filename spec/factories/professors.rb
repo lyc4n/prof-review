@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :professor do
-    first_name "MyString"
-    last_name "MyString"
+    first_name {Faker::LordOfTheRings.character}
+    last_name  {Faker::OnePiece.location}
   end
 end
