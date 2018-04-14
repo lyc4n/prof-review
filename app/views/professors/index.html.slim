@@ -1,2 +1,9 @@
 h1
   span= "Professors @ #{@professors_index.subject_code}"
+
+.professor-list-container data-professors='#{
+  ApplicationController.new.
+    render_to_string(
+      template: "professors/index",
+      formats: :json,
+      locals: {professors_index: @professors_index})}'

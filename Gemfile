@@ -47,6 +47,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'capybara-webkit'
 end
 
 group :development do
@@ -70,3 +71,4 @@ gem 'bootswatch-rails'
 gem 'activeadmin'
 gem 'activeadmin_addons'
 gem 'will_paginate-bootstrap'
+gem 'webpacker', '~> 3.4'

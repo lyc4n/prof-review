@@ -7,8 +7,8 @@ FactoryBot.define do
     end
 
     trait(:with_professor) do
-      after(:create) do |user, evaluator|
-        create_list(:professor, evaluator.professors_count)
+      after(:create) do |subject, evaluator|
+        create_list(:professor, evaluator.professors_count, subject_ids: [subject.id])
       end
     end
   end

@@ -66,3 +66,13 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Capybara.configure do |config|
+  config.javascript_driver = :webkit
+  config.default_max_wait_time = 4
+end
+
+Capybara::Webkit.configure do |config|
+  config.debug = true
+end
+
