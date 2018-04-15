@@ -8,5 +8,6 @@ RSpec.describe Professor, type: :model do
 
   describe 'Associations' do
     it {is_expected.to have_and_belong_to_many(:subjects)}
+    it {is_expected.to have_many(:reviews).dependent(:destroy)}
   end
 end

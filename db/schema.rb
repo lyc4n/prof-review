@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180414054915) do
+ActiveRecord::Schema.define(version: 20180415014306) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 20180414054915) do
     t.integer "subject_id"
     t.index ["professor_id"], name: "index_professors_subjects_on_professor_id"
     t.index ["subject_id"], name: "index_professors_subjects_on_subject_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "professor_id"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["professor_id"], name: "index_reviews_on_professor_id"
+    t.index ["subject_id"], name: "index_reviews_on_subject_id"
+    t.index ["user_id", "professor_id", "subject_id"], name: "index_reviews_on_user_id_and_professor_id_and_subject_id", unique: true
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "subjects", force: :cascade do |t|
