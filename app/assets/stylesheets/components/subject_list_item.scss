@@ -1,0 +1,15 @@
+.subject-list-item{
+  margin-bottom: 5px;
+}
+
+.subject-list-item__wrapper{
+  display: block;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 5px 8px;
+  background: white;
+}
+
+.subject-list-item__wrapper:hover{
+  text-decoration: none;
+}

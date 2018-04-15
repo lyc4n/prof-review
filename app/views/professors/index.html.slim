@@ -1,9 +1,19 @@
-h1
-  span= "Professors @ #{@professors_index.subject_code}"
+.row
+  .col-xs-12
+    .small
+      = link_to 'Classes', root_path
+      | &nbsp;
+      = icon('fas', 'angle-right')
+      | &nbsp;
+      = @professors_index.subject_code
+    h1.page-header
+      = icon('fas', 'graduation-cap fa-sm')
+      span= 'Professors'
 
-.professor-list-container data-professors='#{
-  ApplicationController.new.
-    render_to_string(
-      template: "professors/index",
-      formats: :json,
-      locals: {professors_index: @professors_index})}'
+  .col-xs-12
+    .professor-list-container data-professors='#{
+      ApplicationController.new.
+        render_to_string(
+          template: "professors/index",
+          formats: :json,
+          locals: {professors_index: @professors_index})}'

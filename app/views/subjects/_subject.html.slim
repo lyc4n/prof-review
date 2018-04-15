@@ -1,4 +1,5 @@
-div.subject-list-item
-  = subject.code
-  a href="#{subject_professors_path(subject)}" See Professors
-  hr
+.subject-list-item.col-xs-12.col-sm-4
+  a.subject-list-item__wrapper href="#{subject_professors_path(subject)}"
+    h3= subject.code
+    u.pull-right  See Professors →
+    .clearfix

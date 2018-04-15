@@ -1,0 +1,5 @@
+- map = {'alert' => 'info', 'notice' => 'success'}
+- flash.each do |key, content|
+  .flash class="alert alert-#{map[key]}"
+    a href='#' class='close' data-dismiss='alert' aria-label='close' &times;
+    = content

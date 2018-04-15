@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ProfessorList from './professor_list'
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   let elem = $('.professor-list-container')[0]
 
   if(elem){

@@ -40,17 +40,21 @@ class ProfessorList extends Component{
   }
 
   renderPagination(){
-    return(
-      <Pagination
-          prevPageText={'← Previous'}
-          nextPageText={'Next →'}
-          hideFirstLastPages
-          activePage={this.state.meta.currentPage}
-          itemsCountPerPage={this.state.meta.perPage}
-          totalItemsCount={this.state.meta.totalEntries}
-          onChange={this.handlePageChange.bind(this)}
-      />
-    )
+    if(this.state.meta.totalPages > 1){
+      return(
+        <Pagination
+            prevPageText={'← Previous'}
+            nextPageText={'Next →'}
+            hideFirstLastPages
+            activePage={this.state.meta.currentPage}
+            itemsCountPerPage={this.state.meta.perPage}
+            totalItemsCount={this.state.meta.totalEntries}
+            onChange={this.handlePageChange.bind(this)}
+        />
+      )
+    }else{
+      return null
+    }
   }
   render(){
     return(
