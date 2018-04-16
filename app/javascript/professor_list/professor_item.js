@@ -73,7 +73,7 @@ class ProfessorItem extends Component{
           <button className='btn btn-primary' onClick={this.handleShowModalForm.bind(this)} disabled={!!this.props.currentUserReview}>
             Write a review
           </button>
-          <button className='btn btn-info'  disabled={!!!this.props.reviewsSummary}>See reviews</button>
+          <a href={this.professorPagePath()} className='btn btn-info'>More info</a>
         </div>
       </div>
     )
@@ -104,10 +104,16 @@ class ProfessorItem extends Component{
     }
   }
 
+  professorPagePath(){
+    return(`/professors/${this.props.id}`)
+  }
+
   render(){
     return(
       <div className='professor-list-item'>
-        <h4 className='professor-list-item__name lead'>{this.props.fullName}</h4>
+        <h4 className='professor-list-item__name lead'>
+          <a href={this.professorPagePath()}>{this.props.fullName}</a>
+        </h4>
         {this.renderReviewsSummary()}
         {this.renderActionButtons()}
         {this.renderModalForm()}

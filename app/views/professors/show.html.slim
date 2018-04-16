@@ -1,0 +1,12 @@
+.row
+  .col-xs-12
+    .small.pull-right
+    .small
+      = link_to 'Go back', :back
+      | &nbsp;|&nbsp;
+      | Professor's Profile
+    h1.page-header
+      = icon('fas', 'graduation-cap fa-sm')
+      span= @professor.full_name
+  = render "overall_summary"
+  = render "per_class_summary"

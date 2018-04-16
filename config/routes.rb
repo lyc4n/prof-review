@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :professors, only: :index
   end
 
+  resources :professors, only: :show
   resources :reviews, only: [:create, :update, :destroy]
 end

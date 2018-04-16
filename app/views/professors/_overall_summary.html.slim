@@ -1,0 +1,19 @@
+.col-md-4.col-xs-12
+  .panel.panel-primary
+    .panel-heading
+      h3.panel-title Overall Summary
+    table.table.table-striped.lead
+      tr
+        th Average Rating
+        td
+          span.badge.progress-bar-info
+            - if @professor.average_rating
+              = @professor.average_rating.round(1)
+              = icon 'fas', 'star'
+            -  else
+              | n/a
+      tr
+        th Reviews count
+        td
+          span.badge.progress-bar-info
+            = @professor.reviews_count

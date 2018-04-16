@@ -11,4 +11,8 @@ class ProfessorsController < ApplicationController
       end
     end
   end
+
+  def show
+    @professor = ProfessorShowFacade.new(params[:id])
+  end
 end

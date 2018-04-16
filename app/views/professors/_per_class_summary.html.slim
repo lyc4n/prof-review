@@ -1,0 +1,19 @@
+.col-md-8.col-xs-12
+  .panel.panel-primary
+    .panel-heading
+      h3.panel-title Summary per class
+    - if @professor.subjects.any?
+      table.table.table-striped
+        thead
+          tr
+            th Class
+            th.text-center Rating
+            th.text-center Reviews count
+        tbody
+          - @professor.subjects.each do |subject|
+            tr
+              td= subject.code
+              td.text-center= @professor.average_rating_on_subject(subject) || 'n/a'
+              td.text-center= @professor.review_count_on_subject(subject) || '0'
+    - else
+      .panel-body= 'Professor has not classes yet'
