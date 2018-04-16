@@ -1,9 +1,19 @@
 .row
   .col-xs-12
-    h1.page-header Class List
-
+    h1.page-header
+      | Class List
+      = search_form_for @subjects.q, url: root_path, class: 'form-inline pull-right' do |f|
+        = f.search_field :code_cont, class: 'form-control', placeholder: 'Search class'
+        | &nbsp;
+        = button_tag class: 'btn btn-sm btn-primary' do
+          = icon('fas', 'search')
   .col-xs-12
-    .row
-      = render @subjects
-  .col-xs-12.pagination-container
-    = will_paginate @subjects, renderer: BootstrapPagination::Rails
+    - if @subjects.any?
+      = render @subjects.all
+      .pagination-container
+        = will_paginate @subjects.all, renderer: BootstrapPagination::Rails
+    - else
+      p
+        | Got no results.
+        | &nbsp;
+        a href='/' Show all classes

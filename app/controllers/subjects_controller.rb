@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
 
   def index
-    @subjects = Subject.paginate(page: params[:page])
+    @subjects = SubjectsIndexFacade.new(params[:page], params[:q])
   end
 end

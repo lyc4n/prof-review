@@ -13,7 +13,7 @@ RSpec.describe SubjectsController, type: :controller do
     end
 
     it 'stores correct subjects to @subjects' do
-      expect(assigns[:subjects]).to eq(@expected_subjects)
+      expect(assigns[:subjects].all).to eq(@expected_subjects)
     end
   end
 
