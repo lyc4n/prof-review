@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :subject do
-    code {"#{Faker::ProgrammingLanguage.name} #{Faker::Number.between(111, 999)}" }
+    code {"#{Faker::ProgrammingLanguage.name} #{Faker::Number.unique.between(111, 999)}" }
 
     transient do
       professors_count 5

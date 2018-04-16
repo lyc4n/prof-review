@@ -6,10 +6,14 @@ document.addEventListener('turbolinks:load', () => {
   let elem = $('.professor-list-container')[0]
 
   if(elem){
-    let {data, meta} = JSON.parse(elem.dataset.professors)
+    let {data, meta, reviewsSummaries, currentUserReviews, subject} = JSON.parse(elem.dataset.professors)
 
     ReactDOM.render(
-      <ProfessorList professors={data} meta={meta} />, elem
+      <ProfessorList professors={data}
+                     reviewsSummaries={reviewsSummaries}
+                     currentUserReviews={currentUserReviews}
+                     subject={subject}
+                     meta={meta}  />, elem
     )
   }
 })

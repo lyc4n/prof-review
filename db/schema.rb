@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415014306) do
+ActiveRecord::Schema.define(version: 20180415033947) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -74,5 +74,18 @@ ActiveRecord::Schema.define(version: 20180415014306) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
+
+
+  create_view "professor_subject_reviews_summaries",  sql_definition: <<-SQL
+      SELECT
+    professors.id as professor_id,
+    reviews.subject_id as subject_id,
+    avg(reviews.rating) as average_rating,
+    count(reviews.id) as reviews_count
+  FROM "professors"
+  LEFT OUTER JOIN "reviews"
+    ON "reviews"."professor_id" = "professors"."id"
+  GROUP BY professors.id, reviews.subject_id
+  SQL
 
 end

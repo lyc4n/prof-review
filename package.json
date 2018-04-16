@@ -6,8 +6,11 @@
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.1",
-    "react-js-pagination": "^3.0.1"
+    "react-js-pagination": "^3.0.1",
+    "react-rating": "^1.1.2",
+    "react-truncate": "^2.3.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

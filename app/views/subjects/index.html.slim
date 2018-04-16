@@ -5,5 +5,5 @@
   .col-xs-12
     .row
       = render @subjects
-  .col-xs-12.subject-list__paginator-container
+  .col-xs-12.pagination-container
     = will_paginate @subjects, renderer: BootstrapPagination::Rails

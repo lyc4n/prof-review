@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :classes, controller: :subjects, as: :subjects, only: [] do
     resources :professors, only: :index
   end
+
+  resources :reviews, only: [:create, :update, :destroy]
 end

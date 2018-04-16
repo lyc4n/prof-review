@@ -1,6 +1,8 @@
 class ProfessorsController < ApplicationController
   def index
-    @professors_index = ProfessorsIndexFacade.new(params[:subject_id], params[:page])
+    @professors_index = ProfessorsIndexFacade.new(current_user,
+                                                  params[:subject_id],
+                                                  params[:page])
 
     respond_to do |format|
       format.html

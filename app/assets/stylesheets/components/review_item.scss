@@ -1,0 +1,32 @@
+.review-item{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background: #fcfcfc;
+  padding: 10px 0px 1px 10px;
+}
+
+.review-item__top-info{
+  margin-bottom: 5px;
+
+  i.fas.fa-star{
+    color: white;
+  }
+}
+
+.review-item__dropdown-menu{
+  float: right;
+  & > ul{
+    left: inherit;
+    right: 0;
+    text-align: right;
+  }
+
+  & a.dropdown-toggle{
+    padding: 0px 5px;
+  }
+
+  & a.dropdown-toggle:hover{
+    cursor: pointer;
+    background: #fff9f8;
+  }
+}
