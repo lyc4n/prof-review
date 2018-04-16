@@ -67,7 +67,6 @@ class ProfessorList extends Component{
 
   }
 
-  // reviewItemFunction
   locallyUpdateReviewsSummaries(updatedSummary){
     let reviewsSummaries = this.state.reviewsSummaries.concat()
 
@@ -82,6 +81,12 @@ class ProfessorList extends Component{
            ...reviewsSummaries.slice(0, index),
            updatedSummary,
            ...reviewsSummaries.slice(index + 1)]
+      })
+    }else{
+      this.setState({
+        reviewsSummaries: [
+           ...reviewsSummaries,
+           updatedSummary]
       })
     }
   }

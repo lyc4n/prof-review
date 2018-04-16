@@ -9,6 +9,7 @@ class ReviewsFacade
 
   def reviews_summary
     @reviews_summary = ProfessorSubjectReviewsSummary.
-      find_by(subject_id: @subject, professor_id: @professor)
+      find_by(subject_id: @subject, professor_id: @professor) ||
+      ProfessorSubjectReviewsSummary.new(subject_id: @subject.id, professor_id: @professor.id)
   end
 end

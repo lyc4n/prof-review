@@ -80,8 +80,8 @@ class ProfessorItem extends Component{
   }
 
   renderReviewsSummary(){
-    if(this.props.reviewsSummary){
-      let {averageRating, reviewsCount} = this.props.reviewsSummary
+    let {averageRating, reviewsCount} = this.props.reviewsSummary || {}
+    if(this.props.reviewsSummary && averageRating && reviewsCount){
       return(
         <div>
           <div className='lead'>
