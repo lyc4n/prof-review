@@ -72,3 +72,8 @@ An app that allows students to review professors
    ```sh
    rspec
    ```
+
+# TODOs
+
+- [ ] Complete feature test
+- [ ] Let user see other reviews for a class
