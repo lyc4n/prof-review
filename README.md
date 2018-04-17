@@ -18,7 +18,7 @@ An app that allows students to review professors
 
 # Setup
 
-1. Install RVM and ruby 2.3.1
+1. Install [RVM](https://rvm.io/rvm/install) and ruby 2.3.1
 2. Clone the project
     ```sh
     git clone https://github.com/lyc4n/prof-review.git
