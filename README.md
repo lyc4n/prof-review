@@ -1,5 +1,7 @@
 # Prof Review
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/f321390d0b4f870e9d5e/maintainability)](https://codeclimate.com/github/lyc4n/prof-review/maintainability)
+
 An app that allows students to review professors
 
 # Features
